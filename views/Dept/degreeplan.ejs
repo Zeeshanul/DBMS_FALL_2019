@@ -1,0 +1,34 @@
+<h1><%result[0][0]%></h1>
+
+<hr>
+<br>
+<table>
+    <tr>
+        <th>Programe ID</th>
+
+        <th>Programe Name</th>
+
+        <th>Department</th>
+
+    </tr>
+    <hr>
+    <%for (i=0;i<result.length;i++){%>
+
+    <tr>
+        <% for (j=0;j<result[0].length;j++){%>
+        <td><%=result[i][j]%></td>
+        <%}%>
+        <td>
+                <form action="/degree/<%=result[i][0]%>">
+        <button type="submit">SET DEGREE PLAN FOR <%=result[i][0]%></button>
+        </form>
+        </td>
+    </tr>
+
+    <%}%>
+
+        <br>
+        <hr>
+
+
+</table>

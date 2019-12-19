@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        dean data
+    </title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Course ID.</th>
+                <th>Course Name</th>
+                <th>Crd.Hrs</th>
+                <th>Pre-req</th>
+                <th>Co-req</th>
+                <th>Offered By</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <%for (i=0;i<result.length;i++){%>
+            <tr>
+
+                <%for (j=0;j<result[j].length;j++){%>
+                <td>
+                    <%=result[i][j]%>
+                </td>
+                <%}%>
+         
+                <td>
+                    <form action="/course-edit/<%=result[i][0]%>/<%=result[i][5]%>">
+                <button type="submit">Edit</button>
+                </form>
+                </td>
+
+                <td>
+                    <form action="/course-delete/<%=result[i][0]%>/<%=result[i][5]%>">
+                        <button type="submit">Delete</button></form>
+                </td>
+            </tr>
+            <%}%>
+
+        </tbody>
+    </table>
+
+    <br>
+    <hr>
+    <h2 for="add_course">Offer New Course </h2>
+    <form action="/dean_add_course" method="POST">
+        <hr>
+        <label for="Name">Course Name</label>
+        <br>
+        <input type="text" name="cname" id="cname" placeholder="Course Name">
+        <hr>
+        <label for="cid">Course Name</label>
+        <br>
+        <input type="text" name="cid" id="cid" placeholder="Course ID">
+        <hr>
+        <label for="Name">Crd.Hrs</label>
+        <br>
+        <input type="number" name="crdhrs" id="crdhrs" placeholder="Credit hours">
+        <hr>
+        <label for="Name">Pre-req</label>
+        <br>
+        <input type="text" name="pre_req" id="pre_req" placeholder="Pre-Req">
+        <hr>
+        <label for="Name">Co_Req</label>
+        <br>
+        <input type="text" name="coreq" id="coreq" placeholder="Co-req">
+        <br>
+        <hr>
+        <hr>
+        <label for="Departement">Departement</label>
+        <br>
+        <input type="text" name="Offered" id="offered" placeholder="FCSE">
+        <br>
+        <hr>
+        <button type="submit">Add Course</button>
+
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,59 @@
+CLO-ID WEIGHT DEPARTEMENT
+
+<table>
+    <tr>
+        <th>PLO_ID</th>
+        <th>CLO_ID</th>
+        <th>WEIGHT</th>
+        <th>DEPARTEMENT</th>
+    </tr>
+    <%for (i=0;i<result.length;i++){%>
+    <tr>
+
+        <%for (j=0;j<result[0].length;j++){%>
+        <td>
+            <%=result[i][j]%>
+        </td>
+        <%}%>
+     
+        <td>
+            <form action="/plo-edit/<%=result[i][0]%>/<%=result[i][1]%>/<%=result[i][3]%>">
+        <button type="submit">Edit</button>
+        </form>
+        </td>
+
+        <td>
+            <form action="/plo-delete/<%=result[i][0]%>/<%=result[i][1]%>/<%=result[i][3]%>">
+                <button type="submit">Delete</button>
+            </form>
+        </td>
+    </tr>
+    <%}%>
+
+    </tbody>
+</table>
+
+<br>
+<hr>
+<h2 for="add_course">Add New PLO </h2>
+<form action="/plo-add" method="POST">
+    <hr>
+    <label for="Name">PLO_ID</label>
+    <br>
+    <input type="text" name="cname" id="cname" placeholder="Course Name">
+    <hr>
+    <label for="cid">CLO_ID</label>
+    <br>
+    <input type="text" name="cid" id="cid" placeholder="Course ID">
+    <hr>
+    <label for="Name">WEIGHT</label>
+    <br>
+    <input type="number" name="crdhrs" id="crdhrs" placeholder="Credit hours">
+    <hr>
+    <label for="Name">DEPARTEMENT</label>
+    <input type="text" name="dept" id="dept" placeholder="DEPARTEMENT">
+    <br>
+    <hr>
+    <button type="submit">Add</button>
+
+</form>

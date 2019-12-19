@@ -1,0 +1,8 @@
+<%=result%>
+<title>Edit</title>
+<form action="/offered_semester_delete/<%=result[0][0]%>/<%=result[0][1]%>" method="POST">
+    <%for(i=0;i<result[0].length;i++){%>
+    <input type="text" name="id" value="<%=result[0][i]%>">
+    <%}%>
+<button>Delete Data</button>
+</form>

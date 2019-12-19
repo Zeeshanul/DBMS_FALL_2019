@@ -1,0 +1,8 @@
+<h1><%=result[0].length%></h1>
+<h1>DEAN DATA EDIT</h1>
+<form action="/course-edit/<%=result[0][0]%>" method="POST">
+    <%for(i=0;i<result[0].length;i++){%>
+    <input type="text" name="id" value="<%=result[0][i]%>">
+    <%}%>
+<button>save Details</button>
+</form>

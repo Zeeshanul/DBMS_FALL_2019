@@ -1,0 +1,61 @@
+<h1>Clo Course mappping</h1>
+<table>
+    <tr>
+        <th>CLO ID</th>
+        <th>Course Code</th>
+        <th>Quizt</th>
+        <th>Assignment</th>
+        <th>Mid</th>
+        <th>Project</th>
+        <th>Final</th>
+    </tr>
+    <%for (i=0;i<result.length;i++){%>
+    <tr>
+        <% for(j=0;j<result[i].length;j++){%>
+        <td><%=result[i][j]%></td>
+        <%}%>
+        <% link1 = "clo-edit/"+result[i][0]%>
+        <% link2 = "clo-delete/"+result[i][0]%>
+
+
+        <td>
+            <form action="<%=link2%>"> <button type="submit">Delete</button></form>
+        </td>
+        <td>
+            <form action="<%=link1%>"> <button type="submit">Edit</button></form>
+        </td>
+
+
+        <!-- <td><a href=<%=link2 %>>Delete </a> </td>
+        <td><a href=<%=link1 %>>Edit</a></td> -->
+    </tr>
+    <%}%>
+   
+</table>
+
+<br>
+<hr>
+<form action="/clo-add" method="POST">
+    <label for="cloid">CLO-ID</label><br>
+    <input type="text" name="cloid" id="cloid" placeholder="CLO-ID">
+    <hr>
+    <label for="cid">Course Code</label><br>
+    <input type="text" name="cid" id="cid" placeholder="Course-ID">
+    <hr>
+    <label for="quiz">Quiz</label><br>
+    <input type="number" name="quiz" id="quiz" placeholder="20">
+    <hr>
+    <label for="Assignment">Assignment</label><br>
+    <input type="number" name="Assignment" id="Assignment" placeholder="5">
+    <hr>
+    <label for="Mid">Mid</label><br>
+    <input type="number" name="Mid" id="Mid" placeholder="50">
+    <hr>
+    <label for="Project">Proj</label><br>
+    <input type="number" name="Project" id="Project" placeholder="50">
+    <hr>
+    <label for="Final">Final</label><br>
+    <input type="number" name="Final" id="Final" placeholder="15">
+    <hr>
+    <button type="submit">ADD Details</button>
+</form>

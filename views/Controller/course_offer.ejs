@@ -1,0 +1,51 @@
+<title>Manage Courses</title>
+<h1>Course Management</h1>
+<table>
+    <tr>
+        <th>COURSE_ID</th>
+        <th>SEMSTER_TYPE</th>
+        <th>PROGRAM_ID</th>
+        <th>YEAR</th>
+    </tr>
+    <%for(i=0;i<result.length;i++){%>
+    <tr>
+        <%for(j=0;j<result[0].length;j++){%>
+        <td><%=result[i][j]%></td>
+        <%}%>
+        <td>
+                <form action="/course_offer_edit/<%=result[i][0]%>/<%=result[i][1]%>/<%=result[i][2]%>/<%=result[i][3]%>"
+        method="GET"><button type="submit">Edit</button></form>
+        </td>
+        <td>
+            <form action="/delete/<%=result[i][0]%>/<%=result[i][1]%>/<%=result[i][2]%>/<%=result[i][3]%>" method="GET">
+                <button type="submit">Delete</button></form>
+        </td>
+    </tr>
+    <%}%>
+
+</table>
+
+
+<br>
+<hr>
+
+
+<form action="/course_offer" method="POST">
+    <label for="cid">Course ID</label><br>
+    <input type="text" name="cid" id="cid" placeholder="Course ID">
+    <hr>
+
+    <label for="SEMSTER_TYPE">Semester type</label><br>
+    <input type="text" name="type" id="type" placeholder="Fall">
+    <hr>
+    <label for="pid">Program ID</label><br>
+    <input type="text" name="pid" id="pid" placeholder="BCE">
+    <hr>
+
+    <label for="Semester year">Year</label><br>
+    <input type="number" name="year" id="year" placeholder="i.e 2019">
+    <hr>
+    <button type="submit">Offer Course</button>
+    <hr>
+    <br>
+</form>

@@ -1,0 +1,73 @@
+<table>
+    <tr>
+        <th>PROG_ID</th>
+        <th>YEAR</th>
+        <th>COURSE_ID</th>
+        <th>COURSE_TYPE</th>
+        <th>OFFERED_BY</th>
+        <th>SEMESTER#</th>
+        <th>SEMESTER_TYPE</th>
+
+    </tr>
+    <hr>
+    <%for (i=0;i<result.length;i++){%>
+
+    <tr>
+        <% for (j=0;j<result[0].length;j++){%>
+        <td><%=result[i][j]%></td>
+        <%}%>
+        <td>
+            <form action="/degree-edit/<%=result[i][0]%>/<%=result[i][1]%>/<%=result[i][2]%>">
+        <button type="submit">Edit</button>
+        </form>
+        </td>
+        <td>
+            <form action="/degree-delete/<%=result[i][0]%>/<%=result[i][1]%>/<%=result[i][2]%>"><button
+                    type="submit">Delete</button></form>
+        </td>
+
+    </tr>
+
+    <%}%>
+
+        <br>
+        <hr>
+
+
+</table>
+
+<form action="/degree/<%=result%>" method="POST">
+    <hr>
+    <label for="progid">Prgram ID</label><br>
+    <input type="text" name="progid" id="progid" placeholder="Progra ID i.e BCE">
+
+    <hr>
+    <label for="progid">Year</label><br>
+    <input type="number" name="Year" id="Year" placeholder="2016">
+
+    <hr>
+    <label for="cid">Course ID</label><br>
+    <input type="text" name="cid" id="cid" placeholder="CS222">
+
+    <hr>
+    <label for="type">Course type</label><br>
+    <input type="text" name="type" id="type" placeholder="Core/Elective">
+    <hr>
+    <label for="cid">Offered by</label><br>
+    <input type="text" name="Offered" id="Offered" placeholder="FCSE">
+    <hr>
+    <label for="cid">semester# by</label><br>
+    <input type="number" name="semnum" id="semnum" placeholder="8">
+    <hr>
+    <label for="cid">Semester Type </label><br>
+    <input type="text" name="semtype" id="semtype" placeholder="Fall">
+    <hr>
+    <button type="submit">ADD</button>
+    <hr>
+    <br>
+
+    </form>
+
+
+    <br>
+    <br>

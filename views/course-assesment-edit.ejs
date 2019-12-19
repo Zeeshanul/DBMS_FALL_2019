@@ -1,0 +1,9 @@
+<h1>edit form</h1>
+<h1><%=result[0]%></h1>
+
+<form action="/edit/<%=result[0][0]%>" method="POST">
+    <%for(i=0;i<7;i++){%>
+    <input type="text" name="id" value="<%=result[0][i]%>">
+    <%}%>
+<button>save Details</button>
+</form>

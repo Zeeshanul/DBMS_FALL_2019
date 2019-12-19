@@ -1,0 +1,40 @@
+<title>Manage Offer Semester</title>
+
+<h1>Semester Management</h1>
+<table>
+    <tr>
+        <th>Semester Type</th>
+        <th>Year</th>
+    </tr>
+    <%for(i=0;i<result.length;i++){%>
+    <tr>
+        <%for(j=0;j<result[0].length;j++){%>
+        <td><%=result[i][j]%></td>
+        <%}%>
+        <td>
+                <form action="/offered_semester_edit/<%=result[i][0]%>/<%=result[i][1]%>" method="GET"><button
+            type="submit">Edit</button></form>
+        </td>
+        <td>
+            <form action="/offered_semester_delete/<%=result[i][0]%>/<%=result[i][1]%>" method="GET"><button
+                    type="submit">Delete</button></form>
+        </td>
+    </tr>
+    <%}%>
+
+</table>
+
+
+
+
+
+<form action="/offer_seester" method="POST">
+    <label for="Semester Type">Semester Type</label><br>
+    <input type="text" name="type" id="type" placeholder="i.e Fall">
+    <hr>
+
+    <label for="Semester year">Year"</label><br>
+    <input type="number" name="year" id="year" placeholder="i.e 2019">
+    <hr>
+    <button type="submit">Offer Semester</button>
+</form>

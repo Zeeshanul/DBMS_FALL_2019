@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>PLO TRANSCRIPT </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>PLO TRANSCRIPT OF <%=result[0][1]%></h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Reg No</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Prog ID</th>
+                    <th>PLO ID</th>
+                    <th>Status</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <%for(i=0;i<result.length;i++){%>
+                <tr>
+                    <%for(j=0;j<result[0].length;j++){%>
+                    <td><%=result[i][j]%></td>
+                    <%}%>
+                     </tr>
+                <%}%>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

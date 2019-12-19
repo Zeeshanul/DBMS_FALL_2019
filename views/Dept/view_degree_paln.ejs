@@ -1,0 +1,48 @@
+<h1><%result[0][0]%></h1>
+<br>
+
+<table>
+    <tr>
+        <th>Programe ID</th>
+        <th>Year</th>
+        <th>Course ID</th>
+        <th>COURSE_TYPE</th>
+        <th>OFFERED_BY</th>
+        <th>SEMESTER#</th>
+        <th>SEMESTER_TYPE</th>
+
+    </tr>
+
+
+    <hr>
+    <%for (i=0;i<result.length;i++){%>
+
+    <tr>
+        <% for (j=0;j<result[0].length;j++){%>
+        <td><%=result[i][j]%></td>
+        <%}%>
+        <td>
+        <form action="/degree-edit/<%=result[i][0]%>/<%=result[i][1]%>/<%=result[i][2]%>">
+        <button type="submit">Edit</button>
+        </td>
+        </form>
+
+        <form action="/degree-delete/<%=result[i][0]%>/<%=result[i][1]%>/<%=result[i][2]%>">
+            <td>
+                <button type="submit">Delete</button>
+            </td>
+        </form>
+
+
+
+    </tr>
+
+    <%}%>
+
+   
+
+    <br>
+    <hr>
+
+
+</table>

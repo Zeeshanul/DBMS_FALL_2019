@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<title>Course-Assessment</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+<body>
+    <h1>Here You will Manage Quizes Assignments and Mids etc...</h1>
+    <div class="w3-container">
+        <table class="w3-table">
+            <tr>
+                <th>Student Id</th>
+                <th>Student Name</th>
+                <th>Courses ID</th>
+                <th>Course Name</th>
+                <th>Quiz Total</th>
+                <th>Assignment Total</th>
+                <th>Mid's Marks</th>
+                <th>Peoject</th>
+                <th>Final Marks</th>
+                <th>Action</th>
+            </tr>
+            <% for (var j = 0; j < result.length; j++) {%>
+
+            <tr>
+                <% for (var i = 0; i <result[j].length; i++) {%>
+
+                <td><%=result[j][i];%></td>
+                <% } %>
+                <% link = "course-assesment-edit/"+result[j][0]%>
+                <% link2 = "course-assesment-delete/"+result[j][0]%>
+                <td><a href=<%=link2 %>>Delete </a> </td>
+                <td><a href=<%=link %>>Edit</a></td>
+            </tr> <% } %>
+        </table>
+        <br>
+        <hr>
+        <form action="/update_clos_Plos"><button>Update Clos and Plos</button></form>
+        <br>
+        <hr>
+        <form action="/add-course-assesment" method="POST">
+            <label for="student">Student Id</label><br>
+            <input type="text" id="course_name" name="course_name" placeholder="course_name">
+            <hr>
+
+            <label for="course">Course Id</label><br>
+            <input type="text" id="course_id" name="course_id" placeholder="course_id">
+            <hr>
+            <label for="course">Crd.Hrs</label><br>
+            <input type="number" id="course_crd" name="course_crd" placeholder="Crd.Hrs">
+            <hr>
+
+            <label for="course">Quiz number</label><br>
+            <input type="number" id="number" name="number" placeholder="10">
+            <hr>
+            <label for="course">Assignments Marks</label><br>
+            <input type="number" id="Assignment" name="Assignment" placeholder="10">
+            <hr>
+
+            <label for="course">Mids Marks</label><br>
+            <input type="number" id="Mids" name="Mids" placeholder="10">
+            <hr>
+
+            <label for="course">Project Marks</label><br>
+            <input type="number" id="project" name="project" placeholder="10">
+            <hr>
+
+            <label for="course">Final Marks</label><br>
+            <input type="number" id="Final" name="Final" placeholder="10">
+            <hr>
+            <button>ADD</button>
+            <hr>
+            <br>
+        </form>
+    </div>
+</body>
+
+</html>
